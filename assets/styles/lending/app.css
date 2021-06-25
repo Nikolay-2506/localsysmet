@@ -1,0 +1,75 @@
+body {
+    background-color: #17171712;
+}
+
+/* BEGIN HEADER*/
+
+#header {
+    height: 90px;
+    max-height: 90px;
+}
+
+#logo img {
+    width: 55px;
+}
+
+#logo span.logo-name {
+    font-size: 25px;
+    font-weight: 700;
+    color: #ef5050;
+    font-family: "RalewayExtraBold";
+}
+
+.slogan {
+    font-size: 13px;
+    font-family: "RalewayRegular";
+}
+
+.header-title-email,
+.header-title-open-hours
+{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "RalewayBold";
+}
+
+.header-content-call {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.header-content-email,
+.header-content-open-hours,
+.header-title-call {
+    font-size: 13px;
+    color: #727272;
+    font-family: "OpenSansRegular";
+}
+
+/* END HEADER*/
+
+/* BEGIN HEADER MENU*/
+
+#header-menu,
+.header-menu-dropdown
+ {
+    background-color: #f95b5b;
+}
+
+.header-menu-text {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "OpenSansExtraBold";
+}
+
+/* Преопределил методы выпадающего списке при наведении*/
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #f95b5b;
+    border-bottom: 1px solid #fff;
+}
+
+/* Конец переопределения */
+
+/* END HEADER MENU*/

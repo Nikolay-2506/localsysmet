@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "OpenSansBoldItalic";
+    src: url("OpenSansBoldItalic.eot");
+    src: url("OpenSansBoldItalic.eot?#iefix") format("embedded-opentype"),
+         url("OpenSansBoldItalic.woff") format("woff"),
+         url("OpenSansBoldItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: bold;
+}

@@ -1,19 +1,147 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {# Run `composer require symfony/webpack-encore-bundle`
+       and uncomment the following Encore helpers to start using Symfony UX #}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('lending') }}
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    {% block header %}
+        <div id="header" class="row bg-dark text-white align-items-center">
+            <div class="col-3">
+                <div id="logo" class="row">
+                    <div class="col-3">
+                        <img src="{{ asset('images/logo.png') }}">
+                    </div>
+                    <div class="col-9">
+                        <div class="row">
+                            <span class="logo-name">
+                                Affordable
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="slogan">
+                                Affordable auto service
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <span class="header-title-email">
+                        EMAIL
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="header-content-email">
+                        svytoi.nik@gmail.com
+                    </span>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <span class="header-title-open-hours">
+                        OPEN HOURS
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="header-content-open-hours">
+                        Mon - Sat 9:00 - 19:00 Sunday Closed
+                    </span>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                        <span class="header-title-call">
+                            Call Now
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="header-content-call">
+                        8 (999) 469 74 04
+                    </span>
+                </div>
+            </div>
+            <div class="col-3">
+                {% block sign_in %}
+                    <div class="row">
+                        <span>
+                            <a href="#" class="link-secondary">Sing In</a>
+                            <a href="#" class="link-secondary border border-secondary rounded p-2">Sing Up</a>
+                        </span>
+                    </div>
+                {% endblock sign_in %}
+            </div>
+        </div>
+
+        <div class="row">
+            <ul id="header-menu" class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white header-menu-text" href="#">HOME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white header-menu-text" data-toggle="dropdown" href="#" role="button"
+                       aria-expanded="false">PAGES
+                    </a>
+                    <ul class="dropdown-menu header-menu-dropdown">
+                        <li>
+                            <a class="dropdown-item text-white header-menu-text" href="#">PAGE 1</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-white header-menu-text" href="#">PAGE 2</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-white header-menu-text" href="#">PAGE 3</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-white header-menu-text" href="#">PAGE 4</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white header-menu-text" href="#">ABOUT AS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white header-menu-text" href="#">SERVICE</a>
+                </li>
+            </ul>
+        </div>
+    {% endblock %}
+    {% block body %}{% endblock %}
+    {% block footer %}
+        <div id="footer" class="row bg-dark text-white align-items-center">
+
+        </div>
+        <div>
+            Icons made by
+            <a href="https://www.freepik.com" title="Freepik">
+                Freepik
+            </a>
+            from
+            <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+            </a>
+        </div>
+    {% endblock %}
+</div>
+{% block javascripts %}
+    {{ encore_entry_script_tags('lending') }}
+{% endblock %}
+</body>
 </html>
