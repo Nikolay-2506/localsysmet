@@ -1,4 +1,4 @@
-ARG PHP_VERSION=7.4
+ARG PHP_VERSION=8.0
 ARG NGINX_VERSION=1.20
 
 FROM php:${PHP_VERSION}-fpm-alpine AS app_php
@@ -34,16 +34,13 @@ RUN docker-php-source extract \
     && rm -rf /tmp/pear \
     && rm -rf /var/cache/apk/*
 
-COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 COPY docker/php/php.ini $PHP_INI_DIR/conf.d/php.ini
 COPY docker/php/php-cli.ini $PHP_INI_DIR/conf.d/php-cli.ini
 COPY docker/php/xdebug.ini $PHP_INI_DIR/conf.d/xdebug.ini
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN set -eux; \
-	composer global require "hirak/prestissimo:^0.3" --prefer-dist --no-progress --no-suggest --classmap-authoritative; \
-	composer clear-cache
 
 RUN mkdir -p ${WORKDIR}
 WORKDIR ${WORKDIR}
